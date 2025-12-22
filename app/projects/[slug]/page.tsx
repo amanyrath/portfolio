@@ -27,23 +27,23 @@ export default async function ProjectPage({ params }: PageProps) {
   const caseStudy = getCaseStudyContent(slug);
 
   return (
-    <div className="min-h-screen bg-bg-dark pt-24 pb-16">
-      <div className="max-w-[720px] mx-auto px-6">
+    <div className="min-h-screen bg-bg-dark pt-24 pb-20">
+      <div className="max-w-[680px] mx-auto px-6 md:px-8">
         {/* Back Navigation - Top */}
         <Link 
           href="/#projects" 
-          className="inline-flex items-center gap-2 text-text-muted hover:text-accent-gold transition-colors mb-12 group"
+          className="inline-flex items-center gap-2 text-sm md:text-base text-text-muted hover:text-accent-gold transition-colors mb-12 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Projects
+          <span>Back to Projects</span>
         </Link>
 
         {/* Hero Section */}
-        <header className="mb-16">
-          <h1 className="font-[family-name:var(--font-syne)] text-4xl md:text-5xl font-bold text-text-cream mb-4">
+        <header className="mb-16 pb-12 border-b border-white/5">
+          <h1 className="font-[family-name:var(--font-syne)] text-[2.25rem] md:text-[3rem] lg:text-[3.5rem] font-bold text-text-cream mb-5 leading-[1.15] tracking-tight">
             {project.title}
           </h1>
-          <p className="font-[family-name:var(--font-syne)] text-xl text-text-muted mb-8">
+          <p className="font-[family-name:var(--font-crimson)] text-[1.375rem] md:text-[1.625rem] text-[#a89984] mb-10 leading-[1.5] font-normal">
             {project.subtitle}
           </p>
 
@@ -56,16 +56,16 @@ export default async function ProjectPage({ params }: PageProps) {
 
           {/* External Links */}
           {(project.links.live || project.links.demo || project.links.github) && (
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-6 text-sm md:text-base">
               {project.links.live && (
                 <a
                   href={project.links.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-cream hover:text-accent-gold transition-colors inline-flex items-center gap-1 group"
+                  className="text-text-cream hover:text-accent-gold transition-colors inline-flex items-center gap-1.5 group font-medium"
                 >
-                  Live Demo
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <span>Live Demo</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                 </a>
               )}
               {project.links.demo && (
@@ -73,10 +73,10 @@ export default async function ProjectPage({ params }: PageProps) {
                   href={project.links.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-cream hover:text-accent-gold transition-colors inline-flex items-center gap-1 group"
+                  className="text-text-cream hover:text-accent-gold transition-colors inline-flex items-center gap-1.5 group font-medium"
                 >
-                  Demo
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <span>Demo</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                 </a>
               )}
               {project.links.github && (
@@ -84,10 +84,10 @@ export default async function ProjectPage({ params }: PageProps) {
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-cream hover:text-accent-gold transition-colors inline-flex items-center gap-1 group"
+                  className="text-text-cream hover:text-accent-gold transition-colors inline-flex items-center gap-1.5 group font-medium"
                 >
-                  GitHub
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <span>GitHub</span>
+                  <span className="group-hover:translate-x-0.5 transition-transform">→</span>
                 </a>
               )}
             </div>
@@ -95,30 +95,32 @@ export default async function ProjectPage({ params }: PageProps) {
         </header>
 
         {/* Content Sections */}
-        <div className="space-y-12">
+        <article className="space-y-16">
           {caseStudy.sections.map((section) => (
             <section key={section.title}>
-              <h2 className="text-[0.75rem] uppercase tracking-wider text-accent-gold font-[family-name:var(--font-syne)] mb-4">
+              <h2 className="text-sm md:text-base uppercase tracking-[0.15em] text-accent-gold font-[family-name:var(--font-syne)] font-bold mb-6">
                 {section.title}
               </h2>
-              <div className="font-[family-name:var(--font-crimson)] text-[1.1rem] leading-[1.7] text-text-muted space-y-4">
+              <div className="font-[family-name:var(--font-crimson)] text-xl md:text-[1.375rem] leading-[1.8] md:leading-[1.85] text-[#a89984] space-y-6">
                 {section.content.map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
+                  <p key={idx} className="first-letter:text-[1.35em] first-letter:font-semibold first-letter:text-text-cream">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
               {section.image && (
-                <div className="mt-6 relative w-full" style={{ aspectRatio: '16/9' }}>
+                <div className="mt-10 relative w-full" style={{ aspectRatio: '16/9' }}>
                   <Image 
                     src={section.image} 
                     alt={section.imageAlt || section.title}
                     fill
                     className="rounded-lg border border-[rgba(255,255,255,0.05)] object-cover"
-                    sizes="(max-width: 768px) 100vw, 720px"
+                    sizes="(max-width: 768px) 100vw, 680px"
                   />
                 </div>
               )}
               {section.youtube && (
-                <div className="mt-6 aspect-video">
+                <div className="mt-10 aspect-video">
                   <iframe
                     src={`https://www.youtube.com/embed/${section.youtube}`}
                     title={section.title}
@@ -131,16 +133,18 @@ export default async function ProjectPage({ params }: PageProps) {
               )}
             </section>
           ))}
-        </div>
+        </article>
 
         {/* Back Navigation - Bottom */}
-        <Link 
-          href="/#projects" 
-          className="inline-flex items-center gap-2 text-text-muted hover:text-accent-gold transition-colors mt-16 group"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Projects
-        </Link>
+        <div className="mt-20 pt-12 border-t border-white/5">
+          <Link 
+            href="/#projects" 
+            className="inline-flex items-center gap-2 text-sm md:text-base text-text-muted hover:text-accent-gold transition-colors group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <span>Back to Projects</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -21,29 +21,29 @@ export default function About() {
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
       >
         {/* Section label */}
-        <div className="text-[0.8rem] md:text-[0.85rem] lg:text-[0.9rem] font-bold tracking-[0.3em] uppercase text-[#c9a227] mb-3 md:mb-4">
+        <div className="text-sm md:text-base font-bold tracking-[0.3em] uppercase text-[#c9a227] mb-3 md:mb-4">
           About
         </div>
         
         {/* Section title */}
-        <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-bold mb-6 md:mb-7 lg:mb-8">
+        <h2 className="text-[2rem] md:text-[2.5rem] lg:text-[2.75rem] font-bold mb-6 md:mb-7 lg:mb-8">
           The <span className="font-serif italic text-[#d4c4a8]">path</span>
         </h2>
         
         {/* Story paragraphs */}
-        <p className="font-serif text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] leading-[1.7] md:leading-[1.75] lg:leading-[1.8] text-[#8a7e70] mb-6 md:mb-7 lg:mb-8">
+        <p className="font-serif text-base md:text-lg leading-[1.7] md:leading-[1.75] lg:leading-[1.8] text-[#8a7e70] mb-6 md:mb-7 lg:mb-8">
           <strong className="text-[#f2ebe0] font-medium">I wasn&apos;t a software developer.</strong> I studied physics, worked as an economist, 
           built models as a data scientist. Then I started shipping AI products.
         </p>
         
-        <p className="font-serif text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] leading-[1.7] md:leading-[1.75] lg:leading-[1.8] text-[#8a7e70] mb-6 md:mb-7 lg:mb-8">
+        <p className="font-serif text-base md:text-lg leading-[1.7] md:leading-[1.75] lg:leading-[1.8] text-[#8a7e70] mb-6 md:mb-7 lg:mb-8">
           That crooked path? That&apos;s my art. The perspective no one else brings. 
           I think in systems, decide with data, and ship with urgency.
         </p>
         
         {/* Philosophy box */}
         <div className="p-6 md:p-7 lg:p-8 bg-[#252018] border-l-[3px] border-[#c96147] mt-8 md:mt-10 lg:mt-12">
-          <p className="font-serif text-[1.05rem] md:text-[1.1rem] lg:text-[1.2rem] italic text-[#d4c4a8] leading-[1.6]">
+          <p className="font-serif text-base md:text-lg italic text-[#d4c4a8] leading-[1.6]">
             &quot;Build it ugly first, then beautiful. The ugly MVP becomes the beautiful product. I always build.&quot;
           </p>
         </div>
@@ -70,11 +70,11 @@ export default function About() {
           {/* Timeline Item 1 */}
           <div className="relative">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#0f0d0a] border-2 border-[#c96147] rounded-full -translate-x-1/2" />
-            <div className="text-[0.7rem] md:text-[0.725rem] lg:text-[0.75rem] font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
+            <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2016 — 2018
             </div>
-            <h4 className="text-[1.1rem] md:text-[1.15rem] lg:text-[1.25rem] font-bold mb-1.5 md:mb-2">Physics</h4>
-            <p className="font-serif text-[0.95rem] md:text-[0.975rem] lg:text-[1rem] text-[#8a7e70] leading-[1.6]">
+            <h4 className="text-base md:text-lg font-bold mb-1.5 md:mb-2">Physics</h4>
+            <p className="font-serif text-sm md:text-base text-[#8a7e70] leading-[1.6]">
               Learned to model complex systems and think in first principles.
             </p>
           </div>
@@ -82,11 +82,11 @@ export default function About() {
           {/* Timeline Item 2 */}
           <div className="relative">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#0f0d0a] border-2 border-[#c96147] rounded-full -translate-x-1/2" />
-            <div className="text-[0.7rem] md:text-[0.725rem] lg:text-[0.75rem] font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
+            <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2018 — 2020
             </div>
-            <h4 className="text-[1.1rem] md:text-[1.15rem] lg:text-[1.25rem] font-bold mb-1.5 md:mb-2">Economics</h4>
-            <p className="font-serif text-[0.95rem] md:text-[0.975rem] lg:text-[1rem] text-[#8a7e70] leading-[1.6]">
+            <h4 className="text-base md:text-lg font-bold mb-1.5 md:mb-2">Economics</h4>
+            <p className="font-serif text-sm md:text-base text-[#8a7e70] leading-[1.6]">
               Understood incentives, markets, and how people actually make decisions.
             </p>
           </div>
@@ -94,11 +94,11 @@ export default function About() {
           {/* Timeline Item 3 */}
           <div className="relative">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#0f0d0a] border-2 border-[#c96147] rounded-full -translate-x-1/2" />
-            <div className="text-[0.7rem] md:text-[0.725rem] lg:text-[0.75rem] font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
+            <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2020 — 2023
             </div>
-            <h4 className="text-[1.1rem] md:text-[1.15rem] lg:text-[1.25rem] font-bold mb-1.5 md:mb-2">Data Science</h4>
-            <p className="font-serif text-[0.95rem] md:text-[0.975rem] lg:text-[1rem] text-[#8a7e70] leading-[1.6]">
+            <h4 className="text-base md:text-lg font-bold mb-1.5 md:mb-2">Data Science</h4>
+            <p className="font-serif text-sm md:text-base text-[#8a7e70] leading-[1.6]">
               Built models, found patterns, learned to let data tell the story. MS from UT Austin.
             </p>
           </div>
@@ -106,11 +106,11 @@ export default function About() {
           {/* Timeline Item 4 - Last item with filled gold dot */}
           <div className="relative">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#c9a227] border-2 border-[#c9a227] rounded-full -translate-x-1/2" />
-            <div className="text-[0.7rem] md:text-[0.725rem] lg:text-[0.75rem] font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
+            <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2023 — Now
             </div>
-            <h4 className="text-[1.1rem] md:text-[1.15rem] lg:text-[1.25rem] font-bold mb-1.5 md:mb-2">AI Engineering</h4>
-            <p className="font-serif text-[0.95rem] md:text-[0.975rem] lg:text-[1rem] text-[#8a7e70] leading-[1.6]">
+            <h4 className="text-base md:text-lg font-bold mb-1.5 md:mb-2">AI Engineering</h4>
+            <p className="font-serif text-sm md:text-base text-[#8a7e70] leading-[1.6]">
               Shipping AI-powered products. The path led here.
             </p>
           </div>

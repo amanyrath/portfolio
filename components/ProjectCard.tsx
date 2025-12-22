@@ -36,7 +36,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         />
 
         {/* Image Label */}
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-text-muted text-sm z-10">
+        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-text-muted text-sm md:text-base z-10">
           Project screenshot
         </span>
 
@@ -45,7 +45,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-[#0f0d0a]/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-          <span className="text-sm font-bold tracking-[0.2em] uppercase text-accent-gold flex items-center gap-3">
+          <span className="text-sm md:text-base font-bold tracking-[0.2em] uppercase text-accent-gold flex items-center gap-3">
             {project.links.caseStudy ? 'View Case Study' : 'View Project'}
             <ArrowRight className="w-4 h-4" />
           </span>
@@ -55,22 +55,22 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       {/* Content Area */}
       <div className="py-8" style={{ direction: 'ltr' }}>
         {/* Project Number */}
-        <div className="text-xs font-bold tracking-[0.3em] uppercase text-[#b85c38] mb-6">
+        <div className="text-sm md:text-base font-bold tracking-[0.3em] uppercase text-[#b85c38] mb-6">
           {project.number}
         </div>
 
         {/* Title */}
-        <h3 className="text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold">
+        <h3 className="text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold">
           {project.title}
         </h3>
 
         {/* Subtitle */}
-        <p className="font-crimson text-xl italic text-text-muted mb-6">
+        <p className="font-crimson text-lg md:text-xl italic text-text-muted mb-6">
           {project.subtitle}
         </p>
 
         {/* Description */}
-        <p className="font-crimson text-lg leading-[1.7] text-text-muted mb-8 max-w-[500px]">
+        <p className="font-crimson text-base md:text-lg leading-[1.7] text-text-muted mb-8 max-w-[500px]">
           {project.description}
         </p>
 
@@ -86,7 +86,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.links.caseStudy && (
             <Link
               href={`/projects/${project.slug}`}
-              className="text-xs font-bold tracking-[0.15em] uppercase text-text-cream flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
+              className="text-sm md:text-base font-bold tracking-[0.15em] uppercase text-text-cream flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
             >
               Case Study
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
@@ -97,7 +97,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               href={project.links.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold tracking-[0.15em] uppercase text-text-cream flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
+              className="text-sm md:text-base font-bold tracking-[0.15em] uppercase text-text-cream flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
             >
               Live Site
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
@@ -106,7 +106,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.links.demo && (
             <a
               href={project.links.demo}
-              className="text-xs font-bold tracking-[0.15em] uppercase text-text-muted flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
+              className="text-sm md:text-base font-bold tracking-[0.15em] uppercase text-text-muted flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
             >
               Demo
               <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />
@@ -115,7 +115,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.links.github && (
             <a
               href={project.links.github}
-              className="text-xs font-bold tracking-[0.15em] uppercase text-text-muted flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
+              className="text-sm md:text-base font-bold tracking-[0.15em] uppercase text-text-muted flex items-center gap-2 transition-colors duration-300 hover:text-accent-gold group/link"
             >
               GitHub
               <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:translate-x-1" />

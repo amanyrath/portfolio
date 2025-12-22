@@ -38,7 +38,7 @@ export default function Hero() {
             href="https://github.com/amanyrath" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-[#8a7e70] text-[1.1rem] font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#c9a227]"
+            className="text-[#8a7e70] text-base md:text-lg font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#c9a227]"
           >
             GitHub
           </a>
@@ -46,7 +46,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/alexis-manyrath/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-[#8a7e70] text-[1.1rem] font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#c9a227]"
+            className="text-[#8a7e70] text-base md:text-lg font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#c9a227]"
           >
             LinkedIn
           </a>
@@ -54,7 +54,7 @@ export default function Hero() {
             href="https://x.com/wow_pal" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-[#8a7e70] text-[1.1rem] font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#c9a227]"
+            className="text-[#8a7e70] text-base md:text-lg font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#c9a227]"
           >
             Twitter
           </a>
@@ -69,19 +69,19 @@ export default function Hero() {
         </div>
 
         {/* Role tag with decorative line */}
-        <span className="inline-block text-[0.9rem] font-bold tracking-[0.3em] uppercase text-[#c9a227] mb-8 pl-12 relative before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-8 before:h-[1px] before:bg-[#c9a227]">
+        <span className="inline-block text-sm md:text-base font-bold tracking-[0.3em] uppercase text-[#c9a227] mb-8 pl-12 relative before:content-[''] before:absolute before:left-0 before:top-1/2 before:w-8 before:h-[1px] before:bg-[#c9a227]">
           AI Engineer
         </span>
 
         {/* Headline with mixed typography */}
-        <h1 className="text-[5.5rem] font-extrabold leading-[0.95] tracking-tight mb-8">
+        <h1 className="text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] font-extrabold leading-[0.95] tracking-tight mb-8">
           <span className="block">Raw paths create</span>
           <span className="block font-serif font-normal italic text-[#d4c4a8]">spiky</span>
           <span className="block">perspectives</span>
         </h1>
 
         {/* Journey line with hover underline animations */}
-        <div className="flex items-center gap-4 mb-10 text-[1rem] text-[#8a7e70]">
+        <div className="flex items-center gap-4 mb-10 text-base md:text-lg text-[#8a7e70]">
           <span className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left">
             Physics
           </span>
@@ -100,7 +100,7 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <p className="font-serif text-[1.4rem] italic text-[#8a7e70] max-w-[450px] leading-relaxed mb-12">
+        <p className="font-serif text-base md:text-lg italic text-[#8a7e70] max-w-[450px] leading-relaxed mb-12">
           I solve problems and ship AI-powered products. The unconventional path is the art.
         </p>
 
@@ -108,7 +108,7 @@ export default function Hero() {
         <div className="flex items-center gap-8 mb-24">
           <a
             href="#work"
-            className="inline-flex items-center gap-4 bg-[#b85c38] text-[#f2ebe0] px-10 py-5 font-bold text-[0.9rem] tracking-[0.1em] uppercase transition-all duration-[400ms] relative overflow-hidden group before:absolute before:inset-0 before:bg-[#c9a227] before:-translate-x-full before:transition-transform before:duration-[400ms] hover:before:translate-x-0"
+            className="inline-flex items-center gap-4 bg-[#b85c38] text-[#f2ebe0] px-10 py-5 font-bold text-sm md:text-base tracking-[0.1em] uppercase transition-all duration-[400ms] relative overflow-hidden group before:absolute before:inset-0 before:bg-[#c9a227] before:-translate-x-full before:transition-transform before:duration-[400ms] hover:before:translate-x-0"
           >
             <span className="relative z-10">View Work</span>
             <svg 
@@ -123,7 +123,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="text-[#8a7e70] text-[0.85rem] font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#f2ebe0]"
+            className="text-[#8a7e70] text-sm md:text-base font-semibold tracking-[0.1em] uppercase transition-colors hover:text-[#f2ebe0]"
           >
             Let&apos;s Talk
           </a>
@@ -131,7 +131,7 @@ export default function Hero() {
 
         {/* Bottom bar with scroll indicator */}
         <div className="absolute bottom-0 left-0 right-0 px-20 py-8 flex items-center justify-end border-t border-white/5">
-          <div className="flex items-center gap-4 text-[0.75rem] tracking-[0.2em] uppercase text-[#8a7e70]">
+          <div className="flex items-center gap-4 text-xs md:text-sm tracking-[0.2em] uppercase text-[#8a7e70]">
             <span>Scroll to explore</span>
             <span className="w-[50px] h-[1px] bg-[#c96147] animate-[scrollPulse_2s_ease-in-out_infinite]" />
           </div>

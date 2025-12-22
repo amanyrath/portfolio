@@ -40,12 +40,8 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo - Left */}
           <Link
-            href="#home"
-            className="text-[1rem] font-[800] tracking-[0.3em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            href="/"
+            className="text-base md:text-lg font-[800] tracking-[0.3em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
           >
             Alexis Manyrath
           </Link>
@@ -60,7 +56,7 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-[0.85rem] font-semibold tracking-[0.1em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
+                className="text-sm md:text-base font-semibold tracking-[0.1em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
                 onClick={(e) => {
                   e.preventDefault();
                   const element = document.querySelector(link.href);
@@ -99,7 +95,7 @@ export default function Header() {
             <motion.a
               key={link.name}
               href={link.href}
-              className="text-2xl font-semibold tracking-[0.1em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
+              className="text-xl md:text-2xl font-semibold tracking-[0.1em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
               onClick={(e) => {
                 e.preventDefault();
                 setMobileMenuOpen(false);

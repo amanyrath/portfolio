@@ -68,7 +68,7 @@ export default function About() {
         {/* Timeline items */}
         <div className="space-y-8 md:space-y-10 lg:space-y-12">
           {/* Timeline Item 1 */}
-          <div className="relative">
+          <div id="timeline-physics" className="relative scroll-mt-24">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#0f0d0a] border-2 border-[#c96147] rounded-full -translate-x-1/2" />
             <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2016 — 2018
@@ -80,7 +80,7 @@ export default function About() {
           </div>
           
           {/* Timeline Item 2 */}
-          <div className="relative">
+          <div id="timeline-economics" className="relative scroll-mt-24">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#0f0d0a] border-2 border-[#c96147] rounded-full -translate-x-1/2" />
             <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2018 — 2020
@@ -92,7 +92,7 @@ export default function About() {
           </div>
           
           {/* Timeline Item 3 */}
-          <div className="relative">
+          <div id="timeline-datascience" className="relative scroll-mt-24">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#0f0d0a] border-2 border-[#c96147] rounded-full -translate-x-1/2" />
             <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2020 — 2023
@@ -104,7 +104,7 @@ export default function About() {
           </div>
           
           {/* Timeline Item 4 - Last item with filled gold dot */}
-          <div className="relative">
+          <div id="timeline-ai" className="relative scroll-mt-24">
             <div className="absolute left-[-2.5rem] md:left-[-2.75rem] lg:left-[-3rem] top-2 w-3 h-3 bg-[#c9a227] border-2 border-[#c9a227] rounded-full -translate-x-1/2" />
             <div className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#c9a227] mb-1.5 md:mb-2">
               2023 — Now

@@ -12,13 +12,13 @@ export default function Hero() {
           {/* Decorative rotating ring */}
           <div 
             className="absolute -top-6 -left-6 -right-6 -bottom-6 border-[3px] border-dashed border-[#c9a227] opacity-40 pointer-events-none animate-[spin_30s_linear_infinite]" 
-            style={{ borderRadius: '305px 305px 55px 55px' }} 
+            style={{ borderRadius: '255px 255px 45px 45px' }} 
           />
           
           {/* Photo frame with archway shape */}
           <div 
-            className="relative w-[480px] h-[600px] overflow-hidden bg-[#252018] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.4)] hover:scale-105"
-            style={{ borderRadius: '300px 300px 40px 40px' }}
+            className="relative w-[400px] h-[500px] overflow-hidden bg-[#252018] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_25px_70px_rgba(0,0,0,0.4)] hover:scale-105"
+            style={{ borderRadius: '250px 250px 35px 35px' }}
           >
             <Image
               src="/Alexis_Manyrath.jpg"
@@ -82,21 +82,33 @@ export default function Hero() {
 
         {/* Journey line with hover underline animations */}
         <div className="flex items-center gap-4 mb-10 text-base md:text-lg text-[#8a7e70]">
-          <span className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left">
+          <a 
+            href="#timeline-physics"
+            className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
+          >
             Physics
-          </span>
+          </a>
           <span className="text-[#c96147] font-light">/</span>
-          <span className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left">
+          <a 
+            href="#timeline-economics"
+            className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
+          >
             Economics
-          </span>
+          </a>
           <span className="text-[#c96147] font-light">/</span>
-          <span className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left">
+          <a 
+            href="#timeline-datascience"
+            className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
+          >
             Data Science
-          </span>
+          </a>
           <span className="text-[#c96147] font-light">/</span>
-          <span className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left">
+          <a 
+            href="#timeline-ai"
+            className="relative cursor-pointer transition-colors hover:text-[#f2ebe0] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-[#c96147] after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
+          >
             AI
-          </span>
+          </a>
         </div>
 
         {/* Tagline */}

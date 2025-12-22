@@ -6,6 +6,7 @@ export interface Project {
   title: string;
   subtitle: string;
   description: string;
+  image?: string;
   tech: string[];
   links: {
     live?: string;
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     title: 'Pluto',
     subtitle: 'Git Workflow for AI-First Teams',
     description: 'AI coding tools like Claude Code and Cursor are incredible but they create merge conflicts that slow down teams. Pluto solves this by giving AI agents their own git branches and automating the merge workflow.',
+    image: '/projects/pluto-hero.png',
     tech: ['Claude Code', 'Custom Agents', 'Git'],
     links: {
       live: 'https://www.plutoai.dev/',
@@ -32,37 +34,30 @@ export const projects: Project[] = [
     slug: 'collabcanvas',
     number: '02',
     title: 'CollabCanvas',
-    subtitle: 'Real-Time Collaborative Design with AI',
-    description: 'A multiplayer design tool where teams create wireframes together in real-time. AI suggests design patterns, generates color palettes, and auto-organizes layouts based on best practices.',
-    tech: ['React', 'Konva.js', 'Firebase', 'OpenAI', 'LangChain'],
+    subtitle: 'Real-Time Design Collaboration with AI',
+    description: 'A Christmas-themed multiplayer design tool built in 1 week where teams create and manipulate shapes together in real-time. Features natural language AI commands, multiplayer cursors, smart shape locking, and sub-100ms sync latency.',
+    image: '/projects/collabcanvas-demo.png',
+    tech: ['React', 'Konva', 'Firebase', 'OpenAI', 'TypeScript', 'Tailwind'],
     links: {
-      demo: '#',
-      github: '#',
-      caseStudy: false,
+      live: 'https://collab-canvas-ivory.vercel.app/',
+      demo: 'https://www.loom.com/share/544b711712cf44f9bc6dda486e2fec11',
+      github: 'https://github.com/amanyrath/collab-canvas',
+      caseStudy: true,
     },
   },
   {
     slug: 'tutor-quality',
     number: '03',
-    title: 'Tutor Quality Scoring',
-    subtitle: 'AI Analytics for Performance and Churn',
-    description: 'Built an AI system that analyzes tutoring sessions to predict tutor performance and student churn risk. Automated quality scoring helped the team identify at-risk students and improve tutor training.',
-    tech: ['Rails', 'React', 'AWS', 'SageMaker', 'Python'],
+    title: 'Tutor Mission Control',
+    subtitle: 'AI-Powered Tutor Quality Scoring Dashboard',
+    description: 'Built in 24 hours during Gauntlet AI Week 4. A comprehensive dashboard that monitors tutor performance across behavioral metrics, feedback sentiment, and lesson quality. Features automated pattern detection to identify at-risk tutors 2 weeks earlier than manual review, with AI-powered interventions that scale to 1000+ tutors.',
+    image: '/projects/tutor-dashboard.png',
+    tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Python', 'OpenAI API', 'Tailwind CSS'],
     links: {
-      caseStudy: false,
-    },
-  },
-  {
-    slug: 'spendsense',
-    number: '04',
-    title: 'SpendSense',
-    subtitle: 'Financial Education That Drives Action',
-    description: 'A mobile app that teaches financial discipline through missions and challenges. Users track spending, set goals, and get AI-suggested "Power Moves" to improve their financial health.',
-    tech: ['React Native', 'Firebase', 'Plaid API', 'OpenAI'],
-    links: {
-      demo: '#',
-      github: '#',
-      caseStudy: false,
+      live: 'https://tutor-psi-teal.vercel.app/',
+      demo: 'https://www.loom.com/share/f09cfaa9c37640cca3414a83d6bb8735',
+      github: 'https://github.com/amanyrath/tutor',
+      caseStudy: true,
     },
   },
 ];

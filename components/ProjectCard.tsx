@@ -26,25 +26,36 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         className="relative aspect-[16/10] bg-bg-warm overflow-hidden cursor-pointer group/image block"
         style={{ direction: 'ltr' }}
       >
-        {/* Gradient Background */}
-        <div
-          className="absolute inset-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/image:scale-105"
-          style={{
-            background:
-              'linear-gradient(135deg, #1c1814 0%, #6b7c5c 50%, #1c1814 100%)',
-          }}
-        />
+        {/* Project Image or Gradient Background */}
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/image:scale-105"
+          />
+        ) : (
+          <>
+            {/* Gradient Background Fallback */}
+            <div
+              className="absolute inset-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/image:scale-105"
+              style={{
+                background:
+                  'linear-gradient(135deg, #1c1814 0%, #6b7c5c 50%, #1c1814 100%)',
+              }}
+            />
 
-        {/* Image Label */}
-        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-text-muted text-sm md:text-base z-10">
-          Project screenshot
-        </span>
+            {/* Image Label */}
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-text-muted text-sm md:text-base z-10">
+              Project screenshot
+            </span>
+          </>
+        )}
 
         {/* Border */}
         <div className="absolute inset-0 border border-white/5 pointer-events-none" />
 
         {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-[#0f0d0a]/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+        <div className="absolute inset-0 bg-[#0f0d0a]/80 opacity-0 group-hover/image:opacity-100 transition-opacity duration-400 flex items-center justify-center z-20">
           <span className="text-sm md:text-base font-bold tracking-[0.2em] uppercase text-accent-gold flex items-center gap-3">
             {project.links.caseStudy ? 'View Case Study' : 'View Project'}
             <ArrowRight className="w-4 h-4" />
@@ -60,9 +71,17 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Title */}
-        <h3 className="text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold">
-          {project.title}
-        </h3>
+        {project.links.caseStudy ? (
+          <Link href={`/projects/${project.slug}`}>
+            <h3 className="text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold cursor-pointer hover:text-accent-gold">
+              {project.title}
+            </h3>
+          </Link>
+        ) : (
+          <h3 className="text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold">
+            {project.title}
+          </h3>
+        )}
 
         {/* Subtitle */}
         <p className="font-crimson text-lg md:text-xl italic text-text-muted mb-6">

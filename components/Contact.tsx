@@ -54,8 +54,9 @@ export default function Contact() {
             
             {/* Resume Button - Bordered */}
             <a 
-              href="/resume.pdf"
-              download
+              href="/Alexis_Manyrath_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm md:text-base font-bold uppercase tracking-[0.15em] px-8 py-4 border border-white/10 transition-all duration-300 ease-in-out hover:border-accent-gold hover:text-accent-gold"
             >
               Resume

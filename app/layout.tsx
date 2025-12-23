@@ -60,8 +60,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${crimsonPro.variable} ${syne.variable}`} style={{ scrollBehavior: 'smooth' }}>
-      <body>
+    <html lang="en" className={`${crimsonPro.variable} ${syne.variable}`} style={{ scrollBehavior: 'smooth' }} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <Header />
         {children}
       </body>

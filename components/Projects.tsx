@@ -7,12 +7,12 @@ import AnimatedSection from './AnimatedSection';
 export default function Projects() {
   return (
     <section
-      className="py-32 px-20 relative"
+      className="py-16 sm:py-24 lg:py-32 px-6 sm:px-8 lg:px-20 relative"
       id="work"
     >
       {/* Section Header */}
       <AnimatedSection>
-        <div className="flex justify-between items-end mb-20 pb-8 border-b border-white/5">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-0 mb-12 sm:mb-16 lg:mb-20 pb-6 sm:pb-8 border-b border-white/5">
           <div>
             <div className="text-sm md:text-base font-bold tracking-[0.3em] uppercase text-accent-gold mb-4">
               Selected Work
@@ -31,7 +31,7 @@ export default function Projects() {
       </AnimatedSection>
 
       {/* Projects Grid */}
-      <div className="flex flex-col gap-32">
+      <div className="flex flex-col gap-16 sm:gap-24 lg:gap-32">
         {projects.map((project, index) => (
           <AnimatedSection key={project.slug} delay={index * 0.15}>
             <ProjectCard

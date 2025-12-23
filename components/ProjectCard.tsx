@@ -14,17 +14,13 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isEven = index % 2 === 1;
 
   return (
-    <article
-      className="grid grid-cols-2 gap-16 items-center group/card"
-      style={{
-        direction: isEven ? 'rtl' : 'ltr',
-      }}
-    >
+    <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center group/card">
       {/* Image Area */}
       <Link
         href={project.links.caseStudy ? `/projects/${project.slug}` : '#'}
-        className="relative aspect-[16/10] bg-bg-warm overflow-hidden cursor-pointer group/image block"
-        style={{ direction: 'ltr' }}
+        className={`relative aspect-[16/10] bg-bg-warm overflow-hidden cursor-pointer group/image block ${
+          isEven ? 'lg:order-2' : 'lg:order-1'
+        }`}
       >
         {/* Project Image or Gradient Background */}
         {project.image ? (
@@ -64,44 +60,44 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       </Link>
 
       {/* Content Area */}
-      <div className="py-8" style={{ direction: 'ltr' }}>
+      <div className={`py-4 sm:py-6 lg:py-8 ${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
         {/* Project Number */}
-        <div className="text-sm md:text-base font-bold tracking-[0.3em] uppercase text-[#b85c38] mb-6">
+        <div className="text-xs sm:text-sm md:text-base font-bold tracking-[0.3em] uppercase text-[#b85c38] mb-4 sm:mb-6">
           {project.number}
         </div>
 
         {/* Title */}
         {project.links.caseStudy ? (
           <Link href={`/projects/${project.slug}`}>
-            <h3 className="text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold cursor-pointer hover:text-accent-gold">
+            <h3 className="text-[1.5rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold cursor-pointer hover:text-accent-gold">
               {project.title}
             </h3>
           </Link>
         ) : (
-          <h3 className="text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold">
+          <h3 className="text-[1.5rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] font-extrabold tracking-tight mb-3 transition-colors duration-300 group-hover/card:text-accent-gold">
             {project.title}
           </h3>
         )}
 
         {/* Subtitle */}
-        <p className="font-crimson text-lg md:text-xl italic text-text-muted mb-6">
+        <p className="font-crimson text-base sm:text-lg md:text-xl italic text-text-muted mb-4 sm:mb-6">
           {project.subtitle}
         </p>
 
         {/* Description */}
-        <p className="font-crimson text-base md:text-lg leading-[1.7] text-text-muted mb-8 max-w-[500px]">
+        <p className="font-crimson text-sm sm:text-base md:text-lg leading-[1.7] text-text-muted mb-6 sm:mb-8 max-w-[500px]">
           {project.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
           {project.tech.map((tech) => (
             <TechBadge key={tech} tech={tech} />
           ))}
         </div>
 
         {/* Links */}
-        <div className="flex gap-6 items-center">
+        <div className="flex flex-wrap gap-4 sm:gap-6 items-center">
           {project.links.caseStudy && (
             <Link
               href={`/projects/${project.slug}`}

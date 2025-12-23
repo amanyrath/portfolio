@@ -1,6 +1,12 @@
 'use client';
 
 import AnimatedSection from './AnimatedSection';
+import Button from './ui/Button';
+import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
+
+// Helper to find social link by name
+const getSocialUrl = (name: string) => 
+  SOCIAL_LINKS.find((link) => link.name === name)?.url || '#';
 
 export default function Contact() {
   return (
@@ -25,42 +31,39 @@ export default function Contact() {
           
           <div className="flex flex-col sm:flex-row justify-center flex-wrap gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 px-4">
             {/* Email Button - Primary */}
-            <a 
-              href="mailto:amanyrath@gmail.com"
-              className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.15em] px-6 sm:px-8 py-4 bg-accent-rust border border-accent-rust transition-all duration-300 ease-in-out hover:bg-accent-gold hover:border-accent-gold hover:text-bg-dark min-h-[44px] flex items-center justify-center"
+            <Button 
+              href={`mailto:${SITE_CONFIG.email}`}
+              variant="primary"
             >
               Email Me
-            </a>
+            </Button>
             
             {/* GitHub Button - Bordered */}
-            <a 
-              href="https://github.com/amanyrath"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.15em] px-6 sm:px-8 py-4 border border-white/10 transition-all duration-300 ease-in-out hover:border-accent-gold hover:text-accent-gold min-h-[44px] flex items-center justify-center"
+            <Button 
+              href={getSocialUrl('GitHub')}
+              variant="outline"
+              external
             >
               GitHub
-            </a>
+            </Button>
             
             {/* LinkedIn Button - Bordered */}
-            <a 
-              href="https://www.linkedin.com/in/alexis-manyrath/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.15em] px-6 sm:px-8 py-4 border border-white/10 transition-all duration-300 ease-in-out hover:border-accent-gold hover:text-accent-gold min-h-[44px] flex items-center justify-center"
+            <Button 
+              href={getSocialUrl('LinkedIn')}
+              variant="outline"
+              external
             >
               LinkedIn
-            </a>
+            </Button>
             
             {/* Resume Button - Bordered */}
-            <a 
-              href="/Alexis_Manyrath_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.15em] px-6 sm:px-8 py-4 border border-white/10 transition-all duration-300 ease-in-out hover:border-accent-gold hover:text-accent-gold min-h-[44px] flex items-center justify-center"
+            <Button 
+              href={SITE_CONFIG.resumePath}
+              variant="outline"
+              external
             >
               Resume
-            </a>
+            </Button>
           </div>
         </section>
       </AnimatedSection>
@@ -73,4 +76,3 @@ export default function Contact() {
     </>
   );
 }
-

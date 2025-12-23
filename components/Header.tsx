@@ -2,8 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Twitter, LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SOCIAL_LINKS, NAV_LINKS, SITE_CONFIG } from '@/lib/constants';
+
+// Map social link names to icons
+const socialIcons: Record<string, LucideIcon> = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Twitter: Twitter,
+};
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,17 +44,11 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com/amanyrath', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/alexis-manyrath/', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://x.com/wow_pal', label: 'Twitter' },
-  ];
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0f0d0a]/95 backdrop-blur-[10px] py-4 sm:py-5'
+          ? 'bg-bg-dark/95 backdrop-blur-[10px] py-4 sm:py-5'
           : 'bg-transparent py-6 sm:py-8'
       }`}
     >
@@ -54,24 +56,27 @@ export default function Header() {
         <div className="flex items-center justify-between relative">
           {/* Social Icons - Left */}
           <div className="hidden md:flex items-center gap-6">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#8a7e70] transition-colors duration-300 hover:text-[#c9a227]"
-                aria-label={social.label}
-              >
-                <social.icon size={20} />
-              </a>
-            ))}
+            {SOCIAL_LINKS.map((social) => {
+              const Icon = socialIcons[social.name];
+              return (
+                <a
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted transition-colors duration-300 hover:text-accent-gold"
+                  aria-label={social.label}
+                >
+                  <Icon size={20} />
+                </a>
+              );
+            })}
           </div>
 
           {/* Logo - Center */}
           <Link
             href="/"
-            className="absolute left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-lg font-[800] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60 whitespace-nowrap"
+            className="absolute left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-lg font-[800] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-text-cream transition-opacity duration-300 hover:opacity-60 whitespace-nowrap"
             onClick={(e) => {
               if (window.location.pathname === '/') {
                 e.preventDefault();
@@ -79,21 +84,17 @@ export default function Header() {
               }
             }}
           >
-            <span className="hidden sm:inline">Alexis Manyrath</span>
-            <span className="sm:hidden">AM</span>
+            <span className="hidden sm:inline">{SITE_CONFIG.name}</span>
+            <span className="sm:hidden">{SITE_CONFIG.shortName}</span>
           </Link>
 
           {/* Navigation - Right (Desktop) */}
           <nav className="hidden md:flex items-center gap-12 ml-auto">
-            {[
-              { name: 'Work', href: '#work' },
-              { name: 'About', href: '#about' },
-              { name: 'Contact', href: '#contact' }
-            ].map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm md:text-base font-semibold tracking-[0.1em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
+                className="text-sm md:text-base font-semibold tracking-[0.1em] uppercase text-text-cream transition-opacity duration-300 hover:opacity-60"
                 onClick={(e) => {
                   e.preventDefault();
                   if (window.location.pathname === '/') {
@@ -112,7 +113,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60 ml-auto z-[60] relative"
+            className="md:hidden text-text-cream transition-opacity duration-300 hover:opacity-60 ml-auto z-[60] relative"
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
           >
@@ -123,7 +124,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <motion.div
-        className="fixed inset-0 bg-[#0f0d0a]/95 backdrop-blur-[10px] z-40 md:hidden"
+        className="fixed inset-0 bg-bg-dark/95 backdrop-blur-[10px] z-40 md:hidden"
         initial={{ x: '100%' }}
         animate={{ x: mobileMenuOpen ? 0 : '100%' }}
         transition={{ type: 'tween', duration: 0.3 }}
@@ -135,15 +136,11 @@ export default function Header() {
         }}
       >
         <nav className="flex flex-col items-center justify-center h-full gap-8" onClick={(e) => e.stopPropagation()}>
-          {[
-            { name: 'Work', href: '#work' },
-            { name: 'About', href: '#about' },
-            { name: 'Contact', href: '#contact' }
-          ].map((link, index) => (
+          {NAV_LINKS.map((link, index) => (
             <motion.a
               key={link.name}
               href={link.href}
-              className="text-xl md:text-2xl font-semibold tracking-[0.1em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
+              className="text-xl md:text-2xl font-semibold tracking-[0.1em] uppercase text-text-cream transition-opacity duration-300 hover:opacity-60"
               onClick={(e) => {
                 e.preventDefault();
                 setMobileMenuOpen(false);
@@ -164,22 +161,24 @@ export default function Header() {
           
           {/* Social Icons in Mobile Menu */}
           <div className="flex items-center gap-8 mt-8">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#8a7e70] transition-colors duration-300 hover:text-[#c9a227]"
-                aria-label={social.label}
-              >
-                <social.icon size={24} />
-              </a>
-            ))}
+            {SOCIAL_LINKS.map((social) => {
+              const Icon = socialIcons[social.name];
+              return (
+                <a
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted transition-colors duration-300 hover:text-accent-gold"
+                  aria-label={social.label}
+                >
+                  <Icon size={24} />
+                </a>
+              );
+            })}
           </div>
         </nav>
       </motion.div>
     </header>
   );
 }
-

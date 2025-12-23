@@ -31,10 +31,22 @@
 }
 
 @layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   body {
     background-color: var(--color-bg-dark);
     color: var(--color-text-cream);
     font-family: var(--font-family-sans);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
   
   /* Grain overlay effect */

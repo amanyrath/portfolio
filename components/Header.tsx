@@ -38,11 +38,11 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0f0d0a]/95 backdrop-blur-[10px] py-5'
-          : 'bg-transparent py-8'
+          ? 'bg-[#0f0d0a]/95 backdrop-blur-[10px] py-4 sm:py-5'
+          : 'bg-transparent py-6 sm:py-8'
       }`}
     >
-      <div className="max-w-full px-16">
+      <div className="max-w-full px-4 sm:px-8 lg:px-16">
         <div className="flex items-center justify-between relative">
           {/* Social Icons - Left */}
           <div className="hidden md:flex items-center gap-6">
@@ -62,14 +62,17 @@ export default function Header() {
 
           {/* Logo - Center */}
           <Link
-            href="/#home"
-            className="absolute left-1/2 -translate-x-1/2 text-base md:text-lg font-[800] tracking-[0.3em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
+            href="/"
+            className="absolute left-1/2 -translate-x-1/2 text-sm sm:text-base md:text-lg font-[800] tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60 whitespace-nowrap"
             onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
             }}
           >
-            Alexis Manyrath
+            <span className="hidden sm:inline">Alexis Manyrath</span>
+            <span className="sm:hidden">AM</span>
           </Link>
 
           {/* Navigation - Right (Desktop) */}
@@ -85,8 +88,12 @@ export default function Header() {
                 className="text-sm md:text-base font-semibold tracking-[0.1em] uppercase text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60"
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.querySelector(link.href);
-                  element?.scrollIntoView({ behavior: 'smooth' });
+                  if (window.location.pathname === '/') {
+                    const element = document.querySelector(link.href);
+                    element?.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.href = `/${link.href}`;
+                  }
                 }}
               >
                 {link.name}
@@ -125,8 +132,12 @@ export default function Header() {
               onClick={(e) => {
                 e.preventDefault();
                 setMobileMenuOpen(false);
-                const element = document.querySelector(link.href);
-                element?.scrollIntoView({ behavior: 'smooth' });
+                if (window.location.pathname === '/') {
+                  const element = document.querySelector(link.href);
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = `/${link.href}`;
+                }
               }}
               initial={{ opacity: 0, y: 20 }}
               animate={mobileMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

@@ -20,13 +20,21 @@ export default function Header() {
       }
     };
 
+    // Prevent body scroll when menu is open
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('keydown', handleEscape);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
     };
-  }, []);
+  }, [mobileMenuOpen]);
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/amanyrath', label: 'GitHub' },
@@ -104,8 +112,9 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60 ml-auto"
-            aria-label="Toggle mobile menu"
+            className="md:hidden text-[#f2ebe0] transition-opacity duration-300 hover:opacity-60 ml-auto z-[60] relative"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -118,8 +127,14 @@ export default function Header() {
         initial={{ x: '100%' }}
         animate={{ x: mobileMenuOpen ? 0 : '100%' }}
         transition={{ type: 'tween', duration: 0.3 }}
+        onClick={(e) => {
+          // Close menu when clicking the backdrop (not the nav content)
+          if (e.target === e.currentTarget) {
+            setMobileMenuOpen(false);
+          }
+        }}
       >
-        <nav className="flex flex-col items-center justify-center h-full gap-8">
+        <nav className="flex flex-col items-center justify-center h-full gap-8" onClick={(e) => e.stopPropagation()}>
           {[
             { name: 'Work', href: '#work' },
             { name: 'About', href: '#about' },

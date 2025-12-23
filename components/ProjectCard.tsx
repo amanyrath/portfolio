@@ -85,7 +85,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </p>
 
         {/* Description */}
-        <p className="font-crimson text-sm sm:text-base md:text-lg leading-[1.7] text-text-muted mb-6 sm:mb-8 max-w-[500px]">
+        <p className="font-crimson text-base md:text-lg leading-[1.7] text-text-muted mb-6 sm:mb-8 max-w-[500px]">
           {project.description}
         </p>
 

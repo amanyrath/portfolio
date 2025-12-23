@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex flex-col lg:flex-row">
       {/* Left side - Photo with Archway Frame (45% on desktop, mobile order adjusted) */}
-      <div className="w-full lg:w-[45%] relative lg:bg-gradient-to-b from-[#0f0d0a] to-[#252018] flex flex-col items-center pt-12 lg:pt-32 pb-12 lg:pb-0 gap-6 lg:gap-12 order-2 lg:order-1">
+      <div className="w-full lg:w-[45%] relative lg:bg-gradient-to-b from-[#0f0d0a] to-[#252018] flex flex-col items-center pt-8 sm:pt-10 lg:pt-32 pb-8 sm:pb-10 lg:pb-0 gap-5 sm:gap-6 lg:gap-12 order-2 lg:order-1">
         <div className="relative flex-shrink-0">
           {/* Decorative rotating ring - hidden on mobile to reduce clutter */}
           <div 
@@ -62,7 +62,7 @@ export default function Hero() {
       </div>
 
       {/* Right side - Content (55% on desktop, appears first on mobile) */}
-      <AnimatedSection className="w-full lg:w-[55%] px-6 sm:px-8 lg:px-20 pt-24 sm:pt-28 lg:pt-28 pb-20 sm:pb-24 lg:pb-40 flex flex-col lg:justify-center relative order-1 lg:order-2" delay={0.2}>
+      <AnimatedSection className="w-full lg:w-[55%] px-6 sm:px-8 lg:px-20 pt-20 sm:pt-24 lg:pt-28 pb-12 sm:pb-16 lg:pb-40 flex flex-col lg:justify-center relative order-1 lg:order-2" delay={0.2}>
         {/* Decorative spinning circles - hidden on mobile, adjusted position for tablet */}
         <div className="hidden lg:block absolute top-[15%] right-[10%] w-[150px] h-[150px] border border-[#c9a227] rounded-full opacity-30 animate-[spin_20s_linear_infinite]">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] border border-[#b85c38] rounded-full" />
@@ -117,7 +117,7 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons with hover effects - stack on very small screens */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-8 mb-16 sm:mb-24">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-8 mb-0 sm:mb-24">
           <a
             href="#work"
             className="inline-flex items-center justify-center gap-3 sm:gap-4 bg-[#b85c38] text-[#f2ebe0] px-8 sm:px-10 py-4 sm:py-5 font-bold text-sm md:text-base tracking-[0.1em] uppercase transition-all duration-[400ms] relative overflow-hidden group before:absolute before:inset-0 before:bg-[#c9a227] before:-translate-x-full before:transition-transform before:duration-[400ms] hover:before:translate-x-0 min-h-[44px]"
